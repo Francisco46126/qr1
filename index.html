@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjex</title>
+</head>
+<body>
+
+  <p id="mensaje">Redirigiendo...</p>
+
+  <script>
+    // CAMBIÁ ESTOS ENLACES POR LOS DE TU NEGOCIO
+    const destinos = {
+      cartel1: "https://francisco46126.github.io/menu/"
+    };
+
+    // Lee qué cartel escanearon
+    const id = new URLSearchParams(window.location.search).get("id");
+
+    // Busca el enlace correspondiente
+    const destino = destinos[id];
+
+    if (destino) {
+      window.location.href = destino;
+    } else {
+      document.getElementById("mensaje").textContent =
+        "QR no encontrado";
+    }
+  </script>
+
+</body>
+</html>
